@@ -1,0 +1,531 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Python Language Documentation</title>
+    <style>
+        /* Styling for the AMOLED black theme */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background: #e0e0e0;
+            color: #e0e0e0;
+        }
+
+        h1 {
+            color: #00bcd4;
+            font-size: 28px;
+            text-align: center;
+            border-bottom: 2px solid #00bcd4;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #00acc1;
+            font-size: 22px;
+            margin-top: 20px;
+            border-bottom: 1px solid #00acc1;
+            padding-bottom: 5px;
+        }
+
+        p {
+            color: #b0bec5;
+        }
+
+        ul {
+            color: #90a4ae;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        pre {
+            background-color: #1e1e1e;
+            color: #80cbc4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 14px;
+        }
+
+        code {
+            color: #ffab40;
+        }
+
+        /* Additional styles for a polished layout */
+        hr {
+            border: none;
+            height: 1px;
+            background: #00bcd4;
+            margin: 20px 0;
+        }
+        .next-button {
+      background-color: #00bcd4;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .next-button:hover {
+      background-color: #008c9e;
+    }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Python Language Documentation</h1>
+
+        <h2>Introduction to Python Language</h2>
+        <p>Python is a high-level, interpreted programming language known for its simplicity and readability. It emphasizes code readability and allows developers to express concepts in fewer lines of code compared to other languages. Python supports multiple programming paradigms, including object-oriented, functional, and procedural styles.</p>
+    </div>
+
+    <div class="card">
+        <h2>Key Features of Python Language</h2>
+        <ul>
+            <li>Easy-to-read syntax</li>
+            <li>Dynamic typing</li>
+            <li>Automatic memory management</li>
+            <li>Extensive standard library</li>
+            <li>Support for modules and packages</li>
+            <li>Exception handling</li>
+            <li>High-level data structures</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>Variables and Data Types</h2>
+        <p>Python uses dynamic typing, which means the type of a variable is inferred at runtime. Common data types in Python include integers, floats, strings, booleans, lists, tuples, dictionaries, and more. Variables can be declared and assigned values using the assignment operator (=).</p>
+    </div>
+
+    <div class="card">
+        <h2>Control Structures</h2>
+        <p>Python provides control structures such as if-else statements, for loops, while loops, and more. These control structures allow you to control the flow of execution in your program based on conditions or iterations.</p>
+    </div>
+
+    <div class="card">
+        <h2>Functions</h2>
+        <p>Functions in Python allow you to define reusable blocks of code. They can take parameters and optionally return values. Function definitions start with the <code>def</code> keyword followed by the function name, parentheses, and a colon. The function body is indented.</p>
+    </div>
+      
+     <div class="card">
+        <h2> Python 2 vs. Python 3</h2>
+         In most of the programming languages, whenever a new version releases, it supports the features and syntax of the existing version of the language, therefore, it is easier for the projects to switch in the newer version. However, in the case of Python, the two versions Python 2 and Python 3 are very much different from each other.
+         A list of differences between Python 2 and Python 3 are given below:
+         Python 2 uses print as a statement and used as print "something" to print some string on the console. On the other hand, Python 3 uses print as a function and used as print("something") to print something on the console.
+         Python 2 uses the function raw_input() to accept the user's input. It returns the string representing the value, which is typed by the user. To convert it into the integer, we need to use the int() function in Python. On the other hand, Python 3 uses input() function which automatically interpreted the type of input entered by the user. However, we can cast this value to any type by using primitive functions (int(), str(), etc.).
+        In Python 2, the implicit string type is ASCII, whereas, in Python 3, the implicit string type is Unicode.
+        Python 3 doesn't contain the xrange() function of Python 2. The xrange() is the variant of range() function which returns a xrange object that works similar to Java iterator. The range() returns a list for example the function range(0,3) contains 0, 1, 2.
+        There is also a small change made in Exception handling in Python 3. It defines a keyword as which is necessary to be used. We will discuss it in Exception handling section of Python programming tutorial.
+     </div>
+
+     <div class="card">
+        <h2>Python History</h2>
+       <p> Python was invented by Guido van Rossum in 1991 at CWI in Netherland. The idea of Python programming language has taken from the ABC programming language or we can say that ABC is a predecessor of Python language.
+        
+        There is also a fact behind the choosing name Python. Guido van Rossum was a fan of the popular BBC comedy show of that time, "Monty Python's Flying Circus". So he decided to pick the name Python for his newly created programming language.
+        
+        Python has the vast community across the world and releases its version within the short period.</p>
+     </div>
+
+    <div class="card">
+        <h2>Lists</h2>
+        <p>Lists are ordered collections of items
+
+          <h2>Python Program Example</h2>
+               <style>
+                    body {
+                        background: linear-gradient(to bottom, #121212, #121212);
+                        color:  white  ;
+                        font-family: Arial, sans-serif;
+                    }
+            
+                    .card {
+                        background-color: rgba(0,0, 0, 0.2);
+                        border-radius: 5px;
+                        padding: 20px;
+                        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+                        margin-bottom: 20px;
+                    }
+            
+                    h1, h2, p {
+                        margin: 20px 0;
+                    }
+            
+                    code {
+                        background-color: rgba(255, 255, 255, 0);
+                        padding: 5px;
+                        border-radius: 3px;
+                        font-family: Consolas, monospace;
+                    }
+            
+                    pre {
+                        background-color: rgba(0, 0, 0, 0);
+                        padding: 10px;
+                        border-radius: 5px;
+                        overflow-x: auto;
+                    }
+            
+                    ul {
+                        padding-left: 20px;
+                    }
+            
+                    li {
+                        margin-bottom: 10px;
+                    }
+                </style>
+            </head>
+            <body>
+                <div class="card">
+                    <h1>Python Program Examples</h1>
+            
+                    <h2>Factorial</h2>
+                    <pre><code>
+            def factorial(n):
+                if n == 0:
+                    return 1
+                else:
+                    return n * factorial(n - 1)
+            
+            result = factorial(5)
+            print(result)  # Output: 120
+                    </code></pre>
+                    <br>
+                    <P><h2>Explanantion of the Code:</h2><br>This code defines a recursive function to compute the factorial of a given number n. Here's a breakdown:<br>
+
+                        Function Definition (factorial(n)):<br>
+                        
+                        The function factorial(n) is defined to take an integer n as input.<br>
+                        Base Case (if n == 0):<br>
+                        
+                        The first line inside the function checks if n is 0. This is the base case of the recursion. The factorial of 0 is defined as 1, so if n equals 0, the function returns 1.<br>
+                        Recursive Case (else):<br>
+                        
+                        If n is not 0, the function proceeds to the else block. Here, it returns the result of multiplying n by the factorial of n - 1. This is a recursive step where the function calls itself with n - 1 as the argument, breaking the problem into smaller subproblems.<br>
+                        Recursive Call:<br>
+                        
+                        For example,<br> when calling factorial(5), it will compute 5 * factorial(4), then factorial(4) will compute 4 * factorial(3), and so on, until it reaches factorial(0), which returns 1. Then the recursion "unwinds," multiplying the numbers back up to compute the final result.<br>
+                        Final Result:<br>
+                        
+                        result = factorial(5) calls the factorial function with n = 5. The recursive calls unfold as follows:<br>
+                        factorial(5) → 5 * factorial(4)<br>
+                        factorial(4) → 4 * factorial(3)<br>
+                        factorial(3) → 3 * factorial(2)<br>
+                        factorial(2) → 2 * factorial(1)<br>
+                        factorial(1) → 1 * factorial(0)<br>
+                        factorial(0) returns 1<br><br>
+                        Then, the recursive calls are resolved as:<br>
+                        
+                        factorial(1) = 1 * 1 = 1<br>
+                        factorial(2) = 2 * 1 = 2<br>
+                        factorial(3) = 3 * 2 = 6<br>
+                        factorial(4) = 4 * 6 = 24<br>
+                        factorial(5) = 5 * 24 = 120<br>
+                        So, the final result is 120.<br>
+                        
+                        Output:<br>
+                        The value of result after the call to factorial(5) will be 120, as 5! = 120.</P>
+                </div>
+            
+                <div class="card">
+                    <h2>Palindrome</h2>
+                    <pre><code>
+            def is_palindrome(word):
+                reversed_word = word[::-1]
+                return word == reversed_word
+            
+            result = is_palindrome("madam")
+            print(result)  # Output: True
+                    </code></pre>
+                    <p><h2>Explanantion of the Code:</h2><br>
+                        This code defines a function to check if a given word is a palindrome and demonstrates its usage.<br><br> Let's break it down step by step:
+
+                        Function Definition (is_palindrome(word)):<br>
+                        
+                        The function is_palindrome(word) takes a single argument word, which is expected to be a string.<br><br>
+                        Reversing the Word (reversed_word = word[::-1]):<br><br>
+                        
+                        Inside the function, the line reversed_word = word[::-1] creates a reversed version of the input string word.<br><br>
+                        word[::-1] uses Python's slicing feature to reverse the string. The [::-1] slice means "take the entire string and step backward by 1," effectively reversing it.<br><br>
+                        Comparison (return word == reversed_word):<br><br>
+                        
+                        The function then compares the original word with the reversed version reversed_word. If they are the same (i.e., the word reads the same forward and backward), it returns True, indicating the word is a palindrome.<br><br>
+                        If the two strings are not the same, it returns False, indicating the word is not a palindrome.<br>
+                        Function Call (result = is_palindrome("madam")):<br><br>
+                        
+                        The function is_palindrome is called with the string "madam". This will check if the word "madam" is a palindrome.<br><br>
+                        reversed_word will be "madam", and since the original word is equal to the reversed word, the function will return True.<br><br>
+                        Output (print(result)):<br><br>
+                        
+                        The result, which is True, is printed using the print(result) statement.<br><br>
+                        Output:<br><br>
+                        The output of this code will be :- "TRUE" </p>
+                </div>
+            
+                
+
+            <div class="card">
+                <h1>Python Star Pattern Programs</h1>
+        
+                <h2>Pattern 1: Half Pyramid</h2>
+                <pre><code>
+        for i in range(5):
+            print('* ' * (i + 1))
+        
+          Output:
+          *
+          * *
+          * * *
+          * * * *
+          * * * * *
+                </code></pre>
+        
+                <h2>Pattern 2: Full Pyramid</h2>
+                <pre><code>
+        rows = 5
+        
+        for i in range(rows):
+            print(' ' * (rows - i - 1) + '* ' * (i + 1))
+        
+          Output:
+              *
+             * *
+            * * *
+           * * * *
+          * * * * *
+                </code></pre>
+        
+                <!-- Add more star patterns here -->
+            </div>
+
+
+
+            <h2>Pattern 3: Inverted Half Pyramid</h2>
+            <pre><code>
+    rows = 5
+    
+    for i in range(rows, 0, -1):
+        print('* ' * i)
+    
+      Output:
+      * * * * *
+      * * * *
+      * * *
+      * *
+      *
+            </code></pre>
+    
+            <h2>Pattern 4: Inverted Full Pyramid</h2>
+            <pre><code>
+    rows = 5
+    
+    for i in range(rows, 0, -1):
+        print(' ' * (rows - i) + '* ' * i)
+    
+      Output:
+      * * * * *
+       * * * *
+        * * *
+         * *
+          *
+            </code></pre>
+    
+            <h2>Pattern 5: Hollow Pyramid</h2>
+            <pre><code>
+    rows = 5
+    
+    for i in range(1, rows + 1):
+        if i == 1 or i == rows:
+            print('* ' * i)
+        else:
+            print('* ' + '  ' * (i - 2) + '*')
+    
+      Output:
+      *
+      * *
+      *   *
+      *     *
+      * * * * *
+            </code></pre>
+    
+            
+    
+           
+    
+            <h2>Pattern 8: Diamond</h2>
+            <pre><code>
+    rows = 5
+    
+    for i in range(1, rows + 1):
+        print(' ' * (rows - i) + '* ' * i)
+    
+    for i in range(rows - 1, 0, -1):
+        print(' ' * (rows - i) + '* ' * i)
+    
+      Output:
+          *
+         * *
+        * * *
+       * * * *
+      * * * * *
+       * * * *
+        * * *
+         * *
+          *
+            </code></pre>
+    
+            <h2>Pattern 9: Hollow Diamond</h2>
+            <pre><code>
+    rows = 5
+    
+    for i in range(1, rows + 1):
+        if i == 1 or i == rows:
+            print(' ' * (rows - i) + '* ' * i)
+        else:
+            print(' ' * (rows - i) + '* ' + ' ' * (2 * i - 3) + '*')
+    
+    for i in range(rows - 1, 0, -1):
+        if i == 1 or i == rows:
+            print(' ' * (rows - i) + '* ' * i)
+        else:
+            print(' ' * (rows - i) + '* ' + ' ' * (2 * i - 3) + '*')
+    
+    Output:<BR>
+          * <BR>
+        *   *<BR>
+       *     *<BR>
+      *       *<BR>
+     * * * * * *<BR>
+      *       *<BR>
+       *     *<BR>
+        *   *<BR>
+          * <BR>
+     
+    
+</code></pre>
+    
+            <H2>Variables and Data Types:</H2>
+                <P>Variables store data values.<BR>
+                    Python supports various data types like:<BR>
+                    Integers: Whole numbers (e.g., 5, -3)<BR>
+                    Floats: Decimal numbers (e.g., 3.14, -0.001)<BR>
+                    Strings: Text (e.g., "Hello", 'Python')<BR>
+                    Booleans: True or False<BR>
+                    Lists: Ordered collection of values (e.g., [1, 2, 3])<BR>
+                    Tuples: Immutable collection (e.g., (1, 2, 3))<BR>
+                    Dictionaries: Key-value pairs (e.g., {"name": "Alice", "age": 25})<BR>
+                    Sets: Unordered collection of unique elements (e.g., {1, 2, 3})<BR>
+                    </P>
+                    <H2>Operators:</H2>
+
+
+                    <P>Python has various operators to perform operations on variables:<BR>
+                        Arithmetic operators: +, -, *, /, // (integer division), % (modulo), ** (exponentiation)<BR>
+                        Comparison operators: ==, !=, >, <, >=, <=<BR>
+                        Logical operators: and, or, not<BR>
+                        Assignment operators: =, +=, -=, *=, /=<BR>
+                        Identity operators: is, is not<BR>
+                        Membership operators: in, not in
+                    </P>
+
+
+                    <H2>Introduction to NumPy in Python</H2>
+                    <P>NumPy (Numerical Python) is one of the most fundamental libraries in Python for numerical computing. <BR>It provides support for large, multi-dimensional arrays and matrices, as well as a collection of mathematical functions to operate on these arrays efficiently.
+                    </P>
+
+                    <H2>Introduction to Pandas</H2>
+                    <P>Pandas is a powerful and widely-used Python library for data manipulation and analysis.<BR> It provides easy-to-use data structures and data analysis tools, primarily focusing on two main structures:<BR>
+
+                        Series: A one-dimensional labeled array (similar to a column in a spreadsheet).<BR>
+                        DataFrame: A two-dimensional table of data (like a spreadsheet or SQL table) with rows and columns.
+                    </P>
+
+                    <H2>Using NumPy in Pandas</H2>
+                    <P>Pandas is often used alongside NumPy to handle and manipulate data efficiently. <BR>While Pandas provides higher-level structures for data, NumPy is used for performing numerical operations on the underlying data.<BR>
+
+                        Simple Example of Using NumPy and Pandas Together<BR>
+                        Let's walk through a simple example where we create a DataFrame using NumPy arrays.<BR></P>
+                        <H3>CODE FOR THE SAME</H3>
+                        <pre><code>
+                        import numpy as np
+                        import pandas as pd
+                        
+                        # Create a NumPy array
+                        data = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+                        
+                        # Convert the NumPy array to a Pandas DataFrame
+                        df = pd.DataFrame(data, columns=["A", "B", "C"])
+                        
+                        # Display the DataFrame
+                        print("Pandas DataFrame created from NumPy array:")
+                        print(df)
+                        
+                        # Perform a NumPy operation (e.g., element-wise multiplication)
+                        df['A'] = df['A'] * 2  # Multiply column 'A' by 2 using NumPy operations
+                        
+                        print("\nAfter performing NumPy operation (multiplying 'A' by 2):")
+                        print(df)
+                    </code></pre>
+
+                        <H2>Explanation of the Code:</H2>
+                        <p>Importing Libraries:<br>
+
+                            We import numpy as np for handling numerical operations and pandas as pd for creating and manipulating DataFrames.<br>
+                            Creating a NumPy Array:<br>
+                            
+                            We define a 2D NumPy array data with shape (3, 3).<br>
+                            Converting NumPy Array to Pandas DataFrame:<br>
+                            
+                            We pass the NumPy array data to pd.DataFrame() to create a Pandas DataFrame. We also define column names (["A", "B", "C"]).<br>
+                            Displaying the DataFrame:<br>
+                            
+                            We print the DataFrame to show the data in a tabular format.<br>
+                            NumPy Operations in Pandas:<br>
+                            
+                            We perform an element-wise operation on column 'A'. The column values are multiplied by 2 using NumPy-like operations.<br>
+                        <br>
+                    <br>
+                Output:<br>
+                Pandas DataFrame created from NumPy array:<br>
+                A  B  C<br>
+             0  1  2  3<br>
+             1  4  5  6<br>
+             2  7  8  9<br>
+             <br>
+             After performing NumPy operation (multiplying 'A' by 2):<br>
+                A  B  C<br>
+             0  2  2  3<br>
+             1  8  5  6<br>
+             2 14  8  9<br>
+             </p>
+
+<H2>Practice Question</H2>
+<p>Write a C program to print "Hello, World!" on the screen.<br>
+    Write a C program to take input from the user and print it on the screen.<br>
+    Write a C program to find the sum of two integers entered by the user.<br>
+    Write a C program to calculate the area of a rectangle given its length and width.<br>
+    Write a C program to check whether a number is even or odd.<br>
+    Write a C program to find the largest of three numbers.<br>
+    Write a C program to check if a number is divisible by both 5 and 7.<br>
+    Write a C program to print the first n natural numbers using a for loop.<br>
+    Write a C program to calculate the factorial of a number using a while loop.<br>
+    Write a C program to print the Fibonacci series up to n terms.</p>
+    <br>
+    <p class="note">Practice these concepts to enhance your Python programming skills!</p>
+    <div class="button-container" style="text-align: center; margin-top: 30px;">
+      <button class="next-button" onclick="goToNextPage()">Test Your Self Here!</button>
+    </div>
+    
+    <script>
+      function goToNextPage() {
+        // Replace with the URL of the next page
+        window.location.href = "pythonquiz.html";
+      }
+    </script>
+    </body>
+    </html>

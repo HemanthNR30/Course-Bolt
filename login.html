@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Signup Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(BACKGROUND.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0);
+            padding: 20px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+        }
+        .container h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #f5f5f5;
+        }
+        .form-switch {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        .form-switch button {
+            background: #333;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            color: #fff;
+        }
+        .form-switch .active {
+            background: #333;
+            color: #fff;
+        }
+        form {
+            display: none;
+            flex-direction: column;
+        }
+        form.active {
+            display: flex;
+        }
+        input {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .show-password {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            color: #fff;
+        }
+        button.submit {
+            background: #333;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button.submit:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome</h1>
+        <div class="form-switch">
+            <button id="login-btn" class="active">Login</button>
+            <button id="signup-btn">Signup</button>
+        </div>
+        <!-- Login Form -->
+        <form id="login-form" class="form active" onsubmit="handleLogin(event)">
+            <input type="text" id="login-username" name="username" placeholder="Username" required>
+            <input type="password" id="login-password" name="password" placeholder="Password" required>
+            <div class="show-password">
+                <input type="checkbox" id="toggle-login-password" onclick="togglePassword('login-password')">
+                <label for="toggle-login-password">Show Password</label>
+            </div>
+            <button type="submit" class="submit">Login</button>
+        </form>
+        <!-- Signup Form -->
+        <form id="signup-form" class="form" onsubmit="handleSignup(event)">
+            <input type="text" id="signup-firstname" name="firstname" placeholder="First Name" required>
+            <input type="text" id="signup-lastname" name="lastname" placeholder="Last Name" required>
+            <input type="text" id="signup-username" name="username" placeholder="Username" required>
+            <input type="email" id="signup-email" name="email" placeholder="Email" required>
+            <input type="tel" id="signup-phone" name="phone" placeholder="Phone Number" required pattern="^[7-9][0-9]{9}$" title="Phone number must be a 10-digit number starting with 7, 8, or 9">
+            <input type="date" id="signup-dob" name="dob" required>
+            <input type="password" id="signup-password" name="password" placeholder="Password" required>
+            <div class="show-password">
+                <input type="checkbox" id="toggle-signup-password" onclick="togglePassword('signup-password')">
+                <label for="toggle-signup-password">Show Password</label>
+            </div>
+            <button type="submit" class="submit">Signup</button>
+        </form>
+    </div>
+
+    <script>
+        // JavaScript for toggling forms
+        const loginBtn = document.getElementById('login-btn');
+        const signupBtn = document.getElementById('signup-btn');
+        const loginForm = document.getElementById('login-form');
+        const signupForm = document.getElementById('signup-form');
+
+        loginBtn.addEventListener('click', () => {
+            loginForm.classList.add('active');
+            signupForm.classList.remove('active');
+            loginBtn.classList.add('active');
+            signupBtn.classList.remove('active');
+        });
+
+        signupBtn.addEventListener('click', () => {
+            signupForm.classList.add('active');
+            loginForm.classList.remove('active');
+            signupBtn.classList.add('active');
+            loginBtn.classList.remove('active');
+        });
+
+        // Function to toggle password visibility
+        function togglePassword(inputId) {
+            const passwordInput = document.getElementById(inputId);
+            passwordInput.type = passwordInput.type === 'password' ? 'text' : 'password';
+        }
+
+        // Function to handle login
+        function handleLogin(event) {
+            event.preventDefault(); // Prevent default form submission
+            const username = document.getElementById('login-username').value;
+            const password = document.getElementById('login-password').value;
+
+            if (!validatePassword(password)) {
+                alert("Password must contain at least one number and one special character!");
+                return;
+            }
+
+            if (username && password) {
+                alert("Login successful! Redirecting to homepage...");
+                window.location.href = "index.html"; // Redirect
+            } else {
+                alert("Please fill in all fields!");
+            }
+        }
+
+        // Function to handle signup
+        function handleSignup(event) {
+            event.preventDefault(); // Prevent default form submission
+            const firstName = document.getElementById('signup-firstname').value;
+            const lastName = document.getElementById('signup-lastname').value;
+            const username = document.getElementById('signup-username').value;
+            const email = document.getElementById('signup-email').value;
+            const phone = document.getElementById('signup-phone').value;
+            const dob = document.getElementById('signup-dob').value;
+            const password = document.getElementById('signup-password').value;
+
+            if (!validateEmail(email)) {
+                alert("Please enter a valid email (ends with .com or .in).");
+                return;
+            }
+
+            if (!validatePassword(password)) {
+                alert("Password must contain at least one number and one special character!");
+                return;
+            }
+
+            if (!validatePhone(phone)) {
+                alert("Please enter a valid phone number (Indian format).");
+                return;
+            }
+
+            if (firstName && lastName && username && email && phone && dob && password) {
+                alert("Signup successful! Redirecting to homepage...");
+                window.location.href = "index.html"; // Redirect
+            } else {
+                alert("Please fill in all fields!");
+            }
+        }
+
+        // Password validation: must contain at least one number and one special character
+        function validatePassword(password) {
+            const passwordRegex = /^(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+            return passwordRegex.test(password);
+        }
+
+        // Email validation: must end with .com or .in
+        function validateEmail(email) {
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|in)$/;
+            return emailRegex.test(email);
+        }
+
+        // Phone validation: Indian phone number (10 digits starting with 7, 8, or 9)
+        function validatePhone(phone) {
+            const phoneRegex = /^[7-9][0-9]{9}$/;
+            return phoneRegex.test(phone);
+        }
+    </script>
+</body>
+</html>

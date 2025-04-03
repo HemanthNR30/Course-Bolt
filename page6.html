@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript Documentation</title>
+    <style>
+        /* Styling for the AMOLED black theme */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background: black;
+            color: #e0e0e0;
+        }
+
+        h1 {
+            color: #00bcd4;
+            font-size: 28px;
+            text-align: center;
+            border-bottom: 2px solid #00bcd4;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #00acc1;
+            font-size: 22px;
+            margin-top: 20px;
+            border-bottom: 1px solid #00acc1;
+            padding-bottom: 5px;
+        }
+
+        p {
+            color: #b0bec5;
+        }
+
+        ul {
+            color: #90a4ae;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        pre {
+            background-color: #1e1e1e;
+            color: #80cbc4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 14px; /* Ensured consistent font size for all code blocks */
+        }
+
+        code {
+            color: #ffab40;
+        }
+
+        /* Additional styles for a polished layout */
+        hr {
+            border: none;
+            height: 1px;
+            background: #00bcd4;
+            margin: 20px 0;
+        }
+        .next-button {
+      background-color: #00bcd4;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .next-button:hover {
+      background-color: #008c9e;
+    }
+    </style>
+</head>
+
+<body>
+    <h1>JavaScript Topics</h1>
+
+    <div class="topic">
+        <div class="card"><h2><center>1. Variables and Data Types</center></h2></div>
+        <p>Learn how to declare variables and use different data types in JavaScript.</p>
+        <pre>
+            <code>
+                // Variable declaration
+                let name = 'John';
+                const age = 25;
+
+                // Data types
+                let message = 'Hello, world!'; // String
+                let count = 10; // Number
+                let isTrue = true; // Boolean
+                let fruits = ['apple', 'banana', 'orange']; // Array
+            </code>
+        </pre>
+        <P>Explanation of the Code:</P>
+        <p>let name = 'John'; declares a variable name and assigns it a string value 'John'.<br>
+            const age = 25; declares a constant age with a number value 25. Constants cannot be reassigned.<br>
+            let message = 'Hello, world!'; declares a variable message and assigns it a string.<br>
+            let count = 10; declares a variable count with a numeric value 10.<br>
+            let isTrue = true; declares a variable isTrue and assigns it a boolean value true.<br>
+            let fruits = ['apple', 'banana', 'orange']; declares an array fruits containing three string elements.<br></p>
+    </div>
+
+    <div class="topic">
+        <div class="card"><h2><center>2. Operators</center></h2></div>
+        <p>Explore arithmetic, assignment, comparison, logical, and other operators in JavaScript.</p>
+        <pre>
+            <code>
+                let a = 10;
+                let b = 5;
+
+                let sum = a + b; // Addition
+                let difference = a - b; // Subtraction
+                let product = a * b; // Multiplication
+                let quotient = a / b; // Division
+                let remainder = a % b; // Modulo
+
+                let isGreaterThan = a > b; // Greater than
+                let isEqual = a === b; // Equal to
+                let logicalAnd = (a > 0) && (b > 0); // Logical AND
+                let logicalOr = (a > 0) || (b > 0); // Logical OR
+            </code>
+        </pre>
+        <P>Explanation of the Code:</P>
+        <p>Arithmetic Operators:<br>
+
+            sum = a + b; adds a and b (result: 15).<br>
+            difference = a - b; subtracts b from a (result: 5).<br>
+            product = a * b; multiplies a and b (result: 50).<br>
+            quotient = a / b; divides a by b (result: 2).<br>
+            remainder = a % b; gives the remainder when a is divided by b (result: 0).<br>
+            <br>
+            Comparison Operators:<br>
+            
+            isGreaterThan = a > b; checks if a is greater than b (result: true).<br>
+            isEqual = a === b; checks if a is strictly equal to b (result: false).<br>
+            <br>
+            Logical Operators:<br>
+            
+            logicalAnd = (a > 0) && (b > 0); checks if both conditions are true (result: true).<br>
+            logicalOr = (a > 0) || (b > 0); checks if at least one condition is true (result: true).</p>
+    </div>
+
+    <div class="topic">
+        <div class="card"><h2><center>3. Control Flow</center></h2></div>
+        <p>Understand conditional statements (if-else, switch), loops (for, while), and control flow in JavaScript.</p>
+        <pre>
+            <code>
+                // If-else statement
+                let num = 10;
+
+                if (num > 0) {
+                    console.log('Number is positive');
+                } else if (num < 0) {
+                    console.log('Number is negative');
+                } else {
+                    console.log('Number is zero');
+                }
+
+                // Switch statement
+                let color = 'red';
+
+                switch (color) {
+                    case 'red':
+                        console.log('The color is red');
+                        break;
+                    case 'blue':
+                        console.log('The color is blue');
+                        break;
+                    default:
+                        console.log('The color is unknown');
+                        break;
+                }
+
+                // For loop
+                for (let i = 0; i < 5; i++) {
+                    console.log(i);
+                }
+
+                // While loop
+                let i = 0;
+                while (i < 5) {
+                    console.log(i);
+                    i++;
+                }
+            </code>
+        </pre>
+        <P>Explanation of the Code:</P>
+        <p>If-else statement:<br>
+
+            Checks whether a number (num) is positive, negative, or zero and prints the appropriate message.<br>
+            <br>
+            Switch statement:<br>
+            
+            Evaluates the variable color and prints a message based on its value (red, blue, or default for unknown colors).<br>
+            <br>
+            For loop:<br>
+            
+            Loops 5 times (from 0 to 4) and prints the loop index (i).<br>
+            <br>
+            While loop:<br>
+            
+            Loops while i is less than 5, printing the value of i each time and incrementing i by 1.<br></p>
+    </div>
+
+    <div class="topic">
+        <div class="card"><h2><center>4. Arrays</center></h2></div>
+        <p>Explore arrays, array methods, and array manipulation in JavaScript.</p>
+        <pre>
+            <code>
+                let fruits = ['apple', 'banana', 'orange'];
+
+                console.log(fruits[0]); // Accessing elements
+                fruits.push('grape'); // Adding an element at the end
+                fruits.pop(); // Removing the last element
+                fruits.splice(1, 1); // Removing an element by index
+
+                let numbers = [1, 2, 3, 4, 5];
+                let doubledNumbers = numbers.map(function(num) {
+                    return num * 2;
+                });
+
+                console.log(doubledNumbers); // [2, 4, 6, 8, 10]
+            </code>
+        </pre>
+        <p>Explanation of the Code:</p>
+        <p>Accessing elements: fruits[0] retrieves the first element ("apple") from the fruits array.<br>
+            Adding an element: fruits.push('grape') adds "grape" to the end of the array.<br>
+            Removing the last element: fruits.pop() removes the last element from the array ("grape").<br>
+            Removing an element by index: fruits.splice(1, 1) removes the element at index 1 ("banana").<br></p>
+    </div>
+
+    <div class="topic">
+        <div class="card"><h2><center>5. Objects</center></h2></div>
+        <p>Understand objects, object properties, methods, and object-oriented programming concepts in JavaScript.</p>
+        <pre>
+            <code>
+                let person = {
+                    name: 'John',
+                    age: 25,
+                    greet: function() {
+                        console.log('Hello, my name is ' + this.name);
+                    }
+                };
+
+                console.log(person.name); // Accessing object properties
+                person.greet(); // Calling object methods
+
+                // Object constructor function
+                function Person(name, age) {
+                    this.name = name;
+                    this.age = age;
+                }
+
+                let john = new Person('John', 25);
+                console.log(john.name); // John
+            </code>
+        </pre>
+        <p>Explanantion of the Code:</p>
+        <p>Object with properties and methods:<br>
+
+            person is an object with properties name and age, and a method greet(), which prints a greeting message using this.name.<br>
+            console.log(person.name) accesses the name property, and person.greet() calls the greet method.<br>
+            <br>
+            Constructor function:<br>
+            
+            Person is a constructor function that creates new objects with name and age properties.<br>
+            let john = new Person('John', 25) creates a new Person object and assigns it to john.<br>
+            console.log(john.name) prints the name property of the john object.<br></p>
+    </div>
+
+    <div class="topic">
+        <div class="card"><h2><center>6. Scope and Closures</center></h2></div>
+        <p>Learn about variable scope, function scope, closures, and their impact on JavaScript code.</p>
+        <pre>
+            <code>
+                let x = 10; // Global variable
+
+                function outer() {
+                    let y = 5; // Outer function variable
+
+                    function inner() {
+                        let z = x + y; // Inner function can access variables from outer functions
+                        console.log(z);
+                    }
+
+                    return inner;
+                }
+
+                let innerFunction = outer(); // Closure
+                innerFunction(); // 15
+            </code>
+        </pre>
+        <p>Explanantion of the Code:</p>
+        <p>Global variable: x = 10 is declared globally.<br>
+            Outer function: outer() defines a variable y = 5 and contains an inner function inner().<br>
+            Inner function: inner() can access both the global variable x and the outer function's variable y. It calculates z = x + y and prints the result (15).<br>
+            Closure: When outer() is called, it returns the inner() function. The returned inner() function retains access to x and y even after outer() finishes execution, which is called a closure.<br></p>
+    </div>
+
+    <div class="topic">
+        <div class="card"><h2><center>7. DOM Manipulation</center></h2></div>
+        <p>Explore how to interact with the Document Object Model (DOM) to manipulate HTML elements using JavaScript.</p>
+        <pre>
+            <code>
+                // Get element by ID
+                let heading = document.getElementById('myHeading');
+                heading.innerHTML = 'Hello, world!';
+
+                // Get elements by class name
+                let paragraphs = document.getElementsByClassName('myParagraph');
+                for (let i = 0; i < paragraphs.length; i++) {
+                    paragraphs[i].style.color = 'blue';
+                }
+            </code>
+        </pre>
+        <p>Explanation of thee Code:</p>
+        <p>Get element by ID: document.getElementById('myHeading') selects an HTML element with the ID myHeading, and its content is changed to 'Hello, world!' using innerHTML.<br>
+            Get elements by class name: document.getElementsByClassName('myParagraph') selects all elements with the class myParagraph. <br>
+            It then loops through these elements and changes their text color to blue using style.color.<br></p>
+    </div>
+
+    <div class="topic">
+        <div class="card"><h2><center>8. Events</center></h2></div>
+        <p>Understand event handling in JavaScript and how to respond to user interactions.</p>
+        <pre>
+            <code>
+                let button = document.getElementById('myButton');
+
+                // Event listener
+                button.addEventListener('click', function() {
+                    console.log('Button clicked!');
+                });
+
+                // Event handler function
+                function handleButtonClick() {
+                    console.log('Button clicked!');
+                }
+
+                button.addEventListener('click', handleButtonClick);
+            </code>
+        </pre>
+        <p>Expalnation of the Code:</p>
+        <p>Get button by ID: document.getElementById('myButton') selects the button element with the ID myButton.<br>
+            Event listener: button.addEventListener('click', function() {...}) adds a click event listener to the button, logging 'Button clicked!' when the button is clicked.<br>
+            Event handler function: handleButtonClick() is a separate function that logs 'Button clicked!'.<br>
+             It is also added as an event listener for the button's click event.<br></p>
+    </div>
+
+    <div class="topic">
+        <div class="card"><h2><center>9. Error Handling</center></h2></div>
+        <p>Learn how to handle errors and exceptions in JavaScript using try-catch blocks.</p>
+        <pre>
+            <code>
+                try {
+                    // Code that might throw an error
+                    let result = 10 / 0;
+                } catch (error) {
+                    console.log('An error occurred: ' + error.message);
+                }
+            </code>
+        </pre>
+        <p>Explanation of the Code:</p>
+        <p>Try block: It attempts to execute the code inside it (let result = 10 / 0), which could potentially throw an error.<br>
+            Catch block: If an error occurs, it is caught and handled by the catch block, where the error message is logged to the console: 'An error occurred: division by zero'.<br></p>
+    </div>
+
+    <div class="topic">
+        <div class="card"><h2><center>10. Asynchronous Programming</center></h2></div>
+        <p>Explore asynchronous JavaScript using callbacks, promises, and async/await.</p>
+        <pre>
+            <code>
+                // Callback function
+                function fetchData(callback) {
+                    setTimeout(function() {
+                        let data = 'Hello, world!';
+                        callback(data);
+                    }, 2000);
+                }
+
+                fetchData(function(result) {
+                    console.log(result);
+                });
+
+                // Promises
+                function fetchData() {
+                    return new Promise(function(resolve, reject) {
+                        setTimeout(function() {
+                            let data = 'Hello, world!';
+                            resolve(data);
+                        }, 2000);
+                    });
+                }
+
+                fetchData().then(function(result) {
+                    console.log(result);
+                });
+
+                // Async/await
+                async function fetchData() {
+                    return new Promise(function(resolve, reject) {
+                        setTimeout(function() {
+                            let data = 'Hello, world!';
+                            resolve(data);
+                        }, 2000);
+                    });
+                }
+
+                async function fetchDataAsync() {
+                    let result = await fetchData();
+                    console.log(result);
+                }
+
+                fetchDataAsync();
+            </code>
+        </pre>
+        <p>Explanation of the Code:</p>
+        <p>Callback function: The fetchData function takes a callback that gets called with the result after a 2-second delay.<br>
+            Promises: The fetchData function returns a promise that resolves with the data after 2 seconds, using .then() to handle the result.<br>
+            Async/await: The fetchDataAsync function uses await to pause execution until the promise resolves, allowing cleaner asynchronous code.<br></p>
+    </div>
+
+    <div class="topic">
+        <div class="card"><h2><center>11. JSON</center></h2></div>
+        <p>Understand JSON (JavaScript Object Notation) and how to parse and stringify JSON data.</p>
+        <pre>
+            <code>
+                let person = {
+                    name: 'John',
+                    age: 25,
+                    city: 'New York'
+                };
+
+                // Convert object to JSON string
+                let json = JSON.stringify(person);
+                console.log(json);
+
+                // Convert JSON string to object
+                let obj = JSON.parse(json);
+                console.log(obj.name);
+            </code>
+        </pre>
+        <p>Explanation of the Code:</p>
+        <p>JSON.stringify(): Converts a JavaScript object (person) into a JSON string.<br>
+            JSON.parse(): Converts the JSON string back into a JavaScript object, and then accesses the name property of the object.<br></p>
+    </div>
+
+    <div class="topic">
+        <div class="card"><h2><center>12. Regular Expressions</center></h2></div>
+        <p>Learn about pattern matching and text manipulation using regular expressions in JavaScript.</p>
+        <pre>
+            <code>
+                let str = 'Hello, world!';
+
+                // Test for a match
+                let pattern = /world/;
+                let result = pattern.test(str);
+                console.log(result); // true
+
+                // Search for a match
+                let index = str.search(/world/);
+                console.log(index); // 7
+
+                // Extract matched parts
+                let match = str.match(/o/g);
+                console.log(match); // ['o', 'o']
+
+                // Replace matched parts
+                let replaced = str.replace(/o/g, 'e');
+                console.log(replaced); // Helle, werld!
+
+                // Split a string using a pattern
+                let parts = str.split(/,\s/);
+                console.log(parts); // ['Hello', 'world!']
+            </code>
+        </pre>
+        <p>Explanation of the Code:</p>
+        <p>test(): Checks if the pattern (/world/) exists in the string (str). Returns true.<br>
+            search(): Finds the index of the first match of the pattern in the string, returning 7.<br>
+            match(): Extracts all occurrences of a pattern (in this case, 'o') in the string.<br>
+            replace(): Replaces all occurrences of a pattern ('o') with a new character ('e').<br>
+            split(): Splits the string into parts based on a pattern (comma followed by a space).<br></p>
+    </div>
+    <div class="card"><h2><center>Practice Questions</center></h2></div>
+<p>1.Declare variables of different types: string, number, boolean, array, and object. Print them to the console.<br>
+    2.Write a function that takes a name and an age as parameters, then returns a string greeting with the name and age.<br>
+    3.Write a regular expression to check if a string contains only alphabetic characters.<br>
+    4.Use the replace() method with a regular expression to replace all vowels in a string with the letter 'x'.<br>
+    5.Create a program that validates a phone number (e.g., (123) 456-7890) using regular expressions.<br></p>
+
+
+    <p class="note">Practice these concepts to enhance your Web technology programming skills!</p>
+    <div class="button-container" style="text-align: center; margin-top: 30px;">
+      <button class="next-button" onclick="goToNextPage()">Test Your Self Here</button>
+    </div>
+    
+    <script>
+      function goToNextPage() {
+        // Replace with the URL of the next page
+        window.location.href = "htmlquiz.html";
+      }
+    </script>
+    </body>
+    </html>

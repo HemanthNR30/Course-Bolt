@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS - Cascading Style Sheets</title>
+    <style>
+        /* Styling for the AMOLED black theme */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background: black;
+            color: #e0e0e0;
+        }
+
+        h1 {
+            color: #00bcd4;
+            font-size: 28px;
+            text-align: center;
+            border-bottom: 2px solid #00bcd4;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #00acc1;
+            font-size: 22px;
+            margin-top: 20px;
+            border-bottom: 1px solid #00acc1;
+            padding-bottom: 5px;
+        }
+
+        p {
+            color: #b0bec5;
+        }
+
+        ul {
+            color: #90a4ae;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        pre {
+            background-color: #1e1e1e;
+            color: #80cbc4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 14px;
+        }
+
+        code {
+            color: #ffab40;
+        }
+
+        /* Additional styles for a polished layout */
+        hr {
+            border: none;
+            height: 1px;
+            background: #00bcd4;
+            margin: 20px 0;
+        }
+        .next-button {
+      background-color: #00bcd4;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .next-button:hover {
+      background-color: #008c9e;
+    }
+    </style>
+</head>
+<body>
+
+    <div  class="card"><h1><u><center>Cascading Style Sheets</center></u></h1></div>
+    
+    <p>Cascading Style Sheets (CSS) is a style sheet language used to describe the presentation of a document written in markup languages like HTML or XML. It separates content from design, enabling developers to control the appearance of elements such as layout, color, fonts, and spacing across web pages. CSS uses selectors to apply styles to HTML elements, and its cascading nature determines which styles take precedence in case of conflicts. It includes advanced features like responsive design, animations, transitions, and modern layout techniques such as Flexbox and Grid. CSS is crucial for creating visually engaging, user-friendly websites and ensuring consistency, maintainability, and cross-browser compatibility. As a core technology of the web, CSS enables flexible, responsive, and aesthetically pleasing web experiences across devices, contributing significantly to modern web development.<br><br><br>
+        
+        <div  class="card1"><h2><u><center>Why CSS</center></u></h2></div> <br>
+        
+
+        CSS saves time: You can write CSS once and reuse the same sheet in multiple HTML. 
+        CSS promotes clean coding practices, which positively impacts a website’s performance in search engine optimization (SEO). Search engines, such as Google, prioritize clean, well-structured code when indexing websites. Since CSS separates the presentation of content from the actual content itself, it makes it easier for search engines to "read" the HTML structure without the extra clutter of inline styles or formatting. Clean code also enhances a website’s accessibility, as it allows search engine bots to crawl and index pages more efficiently, potentially improving a website's search rankings. Moreover, CSS allows for far more superior styling capabilities compared to HTML. While HTML provides basic structural elements such as headings, paragraphs, and lists, it is limited in terms of design options. CSS, on the other hand, offers a much broader range of styling attributes, enabling designers to fine-tune every aspect of a website's appearance. This includes features like font size, spacing, background colors, borders, margins, paddings, gradients, shadows, animations, and transitions, all of which would be cumbersome or impossible to achieve with HTML alone. As a result, CSS gives developers and designers the ability to create visually appealing, complex, and engaging websites that would be difficult to replicate with just HTML attributes. <br>   
+    </p>
+    
+    <p class="note">Note: This is just a sample HTML file to demonstrate the inclusion of CSS styles.</p>
+
+    <div  class="card1"><h2><u><center>CSS How-To</center></u></h2></div> 
+  
+    There are 3 ways to write CSS in our HTML <br>
+    Inline CSS  <br>
+    Internal CSS  <br>
+    External CSS   <br>
+    Priority order   <br>
+    Inline > Internal > External <br>
+      
+    <br> Inline CSS
+    
+    Before CSS this was the only way to apply styles
+    Not an efficient way to write as it has a lot of redundancy
+    Self-contained 
+    Uniquely applied on each element
+    The idea of separation of concerns was lost
+    
+
+    <p class="note">Practice these concepts to enhance your Web technology programming skills!</p>
+    <div class="button-container" style="text-align: center; margin-top: 30px;">
+      <button class="next-button" onclick="goToNextPage()">Click Here To Continue</button>
+    </div>
+    
+    <script>
+      function goToNextPage() {
+        // Replace with the URL of the next page
+        window.location.href = "page6.html";
+      }
+    </script>
+    </body>
+    </html>

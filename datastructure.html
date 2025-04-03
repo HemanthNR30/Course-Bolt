@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Structures Tutorial</title>
+    <style>
+        /* Styling for the AMOLED black theme */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background: #121212;
+            color: #e0e0e0;
+        }
+
+        h1 {
+            color: #00bcd4;
+            font-size: 28px;
+            text-align: center;
+            border-bottom: 2px solid #00bcd4;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #00acc1;
+            font-size: 22px;
+            margin-top: 20px;
+            border-bottom: 1px solid #00acc1;
+            padding-bottom: 5px;
+        }
+
+        p {
+            color: #b0bec5;
+        }
+
+        ul {
+            color: #90a4ae;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        pre {
+            background-color: #1e1e1e;
+            color: #80cbc4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 14px;
+        }
+
+        code {
+            color: #ffab40;
+        }
+
+        /* Additional styles for a polished layout */
+        hr {
+            border: none;
+            height: 1px;
+            background: #00bcd4;
+            margin: 20px 0;
+        }
+        
+  table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      background: #1e1e1e;
+      color: #b0bec5;
+  }
+  th, td {
+      border: 1px solid #00acc1;
+      padding: 10px;
+      text-align: left;
+  }
+  th {
+      background: #00bcd4;
+      color: #121212;
+  }
+  tr:nth-child(even) {
+      background: #1a1a1a;
+  }
+  .next-button {
+      background-color: #00bcd4;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .next-button:hover {
+      background-color: #008c9e;
+    }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><p>Data Structures (DS) Tutorial</p></h1>
+        <h2>What is Data Structure?</h2>
+        <p>
+            The data structure name indicates itself that organizing the data in memory. There are many ways of organizing the data in memory, such as arrays, linked lists, stacks, queues, graphs, and more.
+        </p>
+        <p>
+            Data structures are not programming languages like C, C++, Java, etc. They are sets of algorithms that can be used in any programming language to structure the data in memory.
+        </p>
+        <h2>Types of Data Structures</h2>
+        <p>
+            There are two types of data structures:
+        </p>
+        <ul>
+            <li>Primitive data structure</li>
+            <li>Non-primitive data structure</li>
+        </ul>
+        <h3>Primitive Data Structure</h3>
+        <p>
+            The primitive data structures are primitive data types, such as int, char, float, double, and pointer, that can hold a single value.
+        </p>
+        <h3>Non-Primitive Data Structure</h3>
+        <p>
+            The non-primitive data structure is divided into two types: linear data structure and non-linear data structure.
+        </p>
+        <h4>Linear Data Structure</h4>
+        <p>
+            The arrangement of data in a sequential manner is known as a linear data structure. Examples include arrays, linked lists, stacks, and queues.
+        </p>
+        <h4>Non-Linear Data Structure</h4>
+        <p>
+            Non-linear data structures, such as trees and graphs, have elements arranged in a random manner where one element can be connected to 'n' number of other elements.
+        </p>
+        <h2>Major Operations</h2>
+        <p>
+            The major operations that can be performed on data structures are searching, sorting, insertion, updation, and deletion.
+        </p>
+        <h2>Which Data Structure?</h2>
+        <p>
+            The choice of a data structure depends on the efficiency required in terms of time and space. Different data structures can be implemented for a particular abstract data type (ADT), and the best one suited for the requirements is selected.
+        </p>
+        <h2>Advantages of Data Structures</h2>
+        <p>
+            The advantages of using data structures include efficiency, reusability, and abstraction. Data structures make programs efficient in terms of time and space, allow reusability, and provide abstraction by hiding the internal workings.
+        </p>
+        <h2>Data Structures Index</h2>
+        <ul>
+            <li><a href="https://www.google.com/search?q=WHAT+ARE+DSA+BASICS%3F&oq=WHAT+ARE+DSA+BASICS%3F&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQLhhA0gEIODM5MmowajSoAgCwAgE&sourceid=chrome&ie=UTF-8">DS Basics</a></li>
+            <li><a href="https://www.google.com/search?q=WHAT+ARE+DSA++ARRAY%3F&sca_esv=963e6bd44828a6b7&sxsrf=ADLYWIJXPwqh4gQEopScjbxVjjoZyTSzNQ%3A1734536384733&ei=wOxiZ4CqLPKYseMPvqSnGQ&ved=0ahUKEwiAir_I07GKAxVyTGwGHT7SKQMQ4dUDCA8&uact=5&oq=WHAT+ARE+DSA++ARRAY%3F&gs_lp=Egxnd3Mtd2l6LXNlcnAiFFdIQVQgQVJFIERTQSAgQVJSQVk_MgYQABgIGB4yCxAAGIAEGIYDGIoFMgsQABiABBiGAxiKBTILEAAYgAQYhgMYigUyCxAAGIAEGIYDGIoFMgsQABiABBiGAxiKBTIIEAAYgAQYogQyCBAAGIAEGKIESI1UUNwFWJ9CcAF4AZABAJgBsw2gAdlIqgEFNy0yLjS4AQPIAQD4AQGYAgegAoNJwgIKEAAYsAMY1gQYR8ICBhAAGBYYHpgDAIgGAZAGCJIHBTEuNy02oAfOJA&sclient=gws-wiz-serp">DS Array</a></li>
+            <li><a href="https://www.google.com/search?q=WHAT+ARE+DSA++LINKED+LIST%3F&sca_esv=963e6bd44828a6b7&sxsrf=ADLYWIL7RNYo7TmYkjZkvBSY26Dj3G8JIA%3A1734536454200&ei=Bu1iZ63vC5GcseMP5820-AE&ved=0ahUKEwitis_p07GKAxURTmwGHecmDR8Q4dUDCA8&uact=5&oq=WHAT+ARE+DSA++LINKED+LIST%3F&gs_lp=Egxnd3Mtd2l6LXNlcnAiGldIQVQgQVJFIERTQSAgTElOS0VEIExJU1Q_MgoQABgHGAgYChgeMgYQABgIGB4yCBAAGIAEGKIEMggQABiABBiiBDIIEAAYgAQYogQyCBAAGIAEGKIESOhCUOIEWIYlcAF4AZABAJgB_AGgAZwcqgEEMi0xNrgBA8gBAPgBAZgCB6AC7wrCAgcQIxiwAxgnwgIKEAAYsAMY1gQYR8ICBBAjGCfCAgUQABiABMICBBAAGB7CAgYQABgHGB7CAggQABgHGAgYHsICCxAAGIAEGIYDGIoFwgIFECEYoAGYAwCIBgGQBgmSBwUxLjAuNqAH-10&sclient=gws-wiz-serp">DS Linked List</a></li>
+            <li><a href="https://www.geeksforgeeks.org/stack-data-structure/">DS Stack</a></li>
+            <li><a href="https://www.geeksforgeeks.org/queue-data-structure/">DS Queue</a></li>
+            <li><a href="https://www.google.com/search?q=WHAT+ARE+DSA++TREES%3F&sca_esv=963e6bd44828a6b7&sxsrf=ADLYWIL_iJzLpEPIWuANH6zHZlDg5qRbHQ%3A1734536577398&ei=ge1iZ4-BGKOGnesP-46YuA0&ved=0ahUKEwjPxa6k1LGKAxUjQ2cHHXsHBtcQ4dUDCA8&uact=5&oq=WHAT+ARE+DSA++TREES%3F&gs_lp=Egxnd3Mtd2l6LXNlcnAiFFdIQVQgQVJFIERTQSAgVFJFRVM_MgYQABgIGB4yBhAAGAgYHjIGEAAYCBgeMgYQABgIGB4yCxAAGIAEGIYDGIoFMgsQABiABBiGAxiKBTILEAAYgAQYhgMYigUyCBAAGIAEGKIEMggQABiABBiiBDIIEAAYgAQYogRI0DVQywZYlDFwAngAkAEAmAGeAqABuhWqAQYwLjIuMTC4AQPIAQD4AQGYAgigAoILwgIKEAAYsAMY1gQYR8ICBBAjGCfCAgUQABiABMICBBAAGB7CAgUQIRigAcICCBAAGAcYCBgemAMAiAYBkAYIkgcFMi4wLjagB45O&sclient=gws-wiz-serp">DS Tree</a></li>
+            <li><a href="https://www.google.com/search?q=WHAT+ARE+DSA++GRAPH%3F&sca_esv=963e6bd44828a6b7&sxsrf=ADLYWIIoCaRqAnpBniftI33PGl7fw-z1Gg%3A1734536610096&ei=ou1iZ8TDBdSuseMPwcaV8AM&ved=0ahUKEwjEnPqz1LGKAxVUV2wGHUFjBT4Q4dUDCA8&uact=5&oq=WHAT+ARE+DSA++GRAPH%3F&gs_lp=Egxnd3Mtd2l6LXNlcnAiFFdIQVQgQVJFIERTQSAgR1JBUEg_MggQABgHGAgYHjILEAAYgAQYhgMYigUyCxAAGIAEGIYDGIoFMgsQABiABBiGAxiKBTIIEAAYgAQYogQyCBAAGIAEGKIESNgiUL4DWL0ZcAF4AZABAJgB8gGgAagRqgEFMC4xLjm4AQPIAQD4AQGYAgWgAvsGwgIKEAAYsAMY1gQYR8ICBBAjGCfCAgUQABiABMICCxAAGIAEGJECGIoFwgIEEAAYHsICBRAAGO8FmAMAiAYBkAYIkgcFMS4xLjOgB_g5&sclient=gws-wiz-serp">DS Graph</a></li>
+            <li><a href="https://www.geeksforgeeks.org/searching-algorithms/">DS Searching</a></li>
+            <li><a href="https://www.geeksforgeeks.org/sorting-algorithms/">DS Sorting</a></li>
+        </ul>
+        <h1>What is an Algorithm?</h1>
+        <p>
+            An algorithm is a process or a set of rules required to perform calculations or some other problem-solving operations, especially by a computer. The formal definition of an algorithm is that it contains a finite set of instructions which are being carried out in a specific order to perform a specific task. It is not the complete program or code; it is just a solution (logic) of a problem, which can be represented either as an informal description using a flowchart or pseudocode.
+        </p>
+        <h2>Characteristics of an Algorithm</h2>
+        <ul>
+            <li>Input: An algorithm has some input values. We can pass 0 or some input value to an algorithm.</li>
+            <li>Output: We will get 1 or more outputs at the end of an algorithm.</li>
+            <li>Unambiguity: An algorithm should be unambiguous, which means that the instructions in an algorithm should be clear and simple.</li>
+            <li>Finiteness: An algorithm should have finiteness. Here, finiteness means that the algorithm should contain a limited number of instructions, i.e., the instructions should be countable.</li>
+            <li>Effectiveness: An algorithm should be effective as each instruction in an algorithm affects the overall process.</li>
+            <li>Language independent: An algorithm must be language-independent so that the instructions in an algorithm can be implemented in any of the languages with the same output.</li>
+        </ul>
+        <H1>What are Linked List?</H1>
+        <p>A linked list is a linear data structure in which elements, called nodes, are stored in a sequence where each node contains two parts: the data and a reference (or link) to the next node in the sequence. Unlike arrays, linked lists do not require contiguous memory locations and allow for dynamic memory allocation, making them more efficient for certain operations like insertion and deletion.</p>
+        <h1>Types of Linked List</h1>
+        <p>1. Single Linked List: Each node contains a single reference pointing to the next node, and the last node points to null, indicating the end of the list.<br>
+            <br>
+            <img src="singly-linkedlist.png" alt="Single Linked List"><br>
+            <br>
+            2. Double Linked List: In this type, each node has two references: one pointing to the next node and one pointing to the previous node, allowing traversal in both directions.<br>
+            <br>
+            <img src="Double.png" alt="Double Linked List"><br>
+            <br>
+            3. Circular Linked List: In a circular singly linked list, the last node points back to the first node, forming a circular loop. A circular doubly linked list has nodes that point to both the previous and next nodes, with the last node pointing to the first node and vice versa.</p>
+            <br>
+            <img src="Circular.png" alt="Circular Linked List"><br>
+        <h1>Linked Lists and Arrays</h1>
+  <p>Linked lists and arrays are similar since they both store collections of data. Arrays are the most common data structure used to store collections of elements. Arrays are convenient to declare and provide easy syntax to access any element by its index number. Once the array is set up, access to any element is convenient and fast. However, arrays have some disadvantages:</p>
+  <ul>
+    <li>The size of the array is fixed, often specified at compile time.</li>
+    <li>Inserting new elements at the front is potentially expensive because existing elements need to be shifted over to make room.</li>
+    <li>Deleting an element from an array is not possible.</li>
+  </ul>
+  <p>Linked lists have their own strengths and weaknesses. They allocate memory for each element separately and only when necessary. Here is a quick review of the terminology and rules of pointers.</p>
+  <h2>Linked List Concepts</h2>
+  <p>A linked list is a non-sequential collection of data items. It is a dynamic data structure where each data item has an associated pointer that points to the memory location of the next data item. Linked lists have several advantages:</p>
+  <ul>
+    <li>Linked lists are dynamic data structures that can grow or shrink during program execution.</li>
+    <li>Linked lists have efficient memory utilization as memory is allocated whenever required and deallocated when no longer needed.</li>
+    <li>Insertion and deletion are easier and efficient in linked lists.</li>
+    <li>Linked lists can be used to implement complex applications such as stacks, queues, trees, and graphs.</li>
+  </ul>
+  <p>However, linked lists also have some disadvantages:</p>
+  <ul>
+    <li>Linked lists consume more space as each node requires an additional pointer to store the address of the next node.</li>
+    <li>Searching a particular element in a linked list is difficult and time-consuming.</li>
+  </ul>
+  <h3>Types of Linked Lists</h3>
+  <p>There are several types of linked lists:</p>
+  <ol>
+    <li>Single Linked List</li>
+    <li>Double Linked List</li>
+    <li>Circular Linked List</li>
+    <li>Circular Double Linked List</li>
+  </ol>
+  <h4>Comparison between Array and Linked List</h4>
+  <table>
+    <tr>
+      <th>Feature</th>
+      <th>Array</th>
+      <th>Linked List</th>
+    </tr>
+    <tr>
+      <td>Size</td>
+      <td>Fixed</td>
+      <td>Not fixed</td>
+    </tr>
+    <tr>
+      <td>Memory Allocation</td>
+      <td>Stack</td>
+      <td>Heap</td>
+    </tr>
+    <tr>
+      <td>Insertion at Front</td>
+      <td>Potentially expensive</td>
+      <td>Easy</td>
+    </tr>
+    <tr>
+      <td>Deletion</td>
+      <td>Not possible</td>
+      <td>Possible</td>
+    </tr>
+  </table>
+  <h5>Trade-offs between Linked Lists and Arrays</h5>
+  <p>Linked lists.
+    <li>Accessing elements: In an array, accessing elements by their index is efficient and has a constant time complexity of O(1). In a linked list, accessing elements by their position requires traversing the list from the beginning, resulting in a time complexity of O(n), where n is the number of elements in the list.</li>
+    <li>Insertion and deletion: Linked lists have an advantage when it comes to inserting and deleting elements. Inserting or deleting an element at the front of a linked list can be done in constant time, O(1), since it only involves updating the pointers. In contrast, inserting or deleting an element in an array requires shifting elements, resulting in a time complexity of O(n), where n is the number of elements in the array.</li>
+    <li>Memory allocation: Arrays are allocated in a contiguous block of memory, while linked lists use dynamic memory allocation, allocating memory for each node individually. This means that arrays require a fixed amount of memory, specified at compile time, while linked lists can grow or shrink during program execution.</li>
+    <li>Memory utilization: Linked lists have efficient memory utilization since memory is allocated only when necessary. In contrast, arrays require a fixed amount of memory, even if some elements are unused.</li>
+    <li>Search operation: Searching for a specific element in an array can be done efficiently using binary search if the array is sorted. Binary search has a time complexity of O(log n), where n is the number of elements in the array. In a linked list, searching for an element requires traversing the list sequentially, resulting in a time complexity of O(n).</li>
+  </ul>
+  <h6>Conclusion</h6>
+  <p>In conclusion, linked lists and arrays have different characteristics and trade-offs. Arrays provide efficient random access and are suitable for scenarios where the size of the collection is known in advance and needs to be accessed frequently. On the other hand, linked lists are more flexible in terms of size and efficient for inserting and deleting elements. The choice between the two depends on the specific requirements of your application.
+
+  </p>
+    </div>
+    <h1>Stack Implementation</h1>
+  <p>A stack is an abstract data type (ADT) commonly used in programming languages. It follows the LIFO (Last-In-First-Out) principle, similar to a real-world stack of cards or plates.</p>
+  <h2>Stack Operations</h2>
+  <ul>
+    <li><strong>push</strong>: Insert an element onto the stack</li>
+    <li><strong>pop</strong>: Remove and access the top element from the stack</li>
+    <li><strong>peek</strong>: Get the top element without removing it</li>
+    <li><strong>isFull</strong>: Check if the stack is full</li>
+    <li><strong>isEmpty</strong>: Check if the stack is empty</li>
+  </ul>
+  <h2>Basic Stack Implementation</h2>
+  <pre><code>
+    #include &lt;stdio.h&gt;
+    #include &lt;stdbool.h&gt;
+
+    #define MAXSIZE 100
+
+    int stack[MAXSIZE];
+    int top = -1;
+
+    void push(int data) {
+      if (!isFull()) {
+        top++;
+        stack[top] = data;
+      } else {
+        printf("Could not insert data, Stack is full.\n");
+      }
+    }
+
+    int pop() {
+      if (!isEmpty()) {
+        int data = stack[top];
+        top--;
+        return data;
+      } else {
+        printf("Could not retrieve data, Stack is empty.\n");
+        return -1;
+      }
+    }
+
+    int peek() {
+      if (!isEmpty()) {
+        return stack[top];
+      } else {
+        printf("Stack is empty.\n");
+        return -1;
+      }
+    }
+
+    bool isFull() {
+      if (top == MAXSIZE - 1)
+        return true;
+      else
+        return false;
+    }
+
+    bool isEmpty() {
+      if (top == -1)
+        return true;
+      else
+        return false;
+    }
+
+    int main() {
+      push(5);
+      push(10);
+      push(15);
+      printf("Peek: %d\n", peek());
+      printf("Pop: %d\n", pop());
+      printf("Pop: %d\n", pop());
+      printf("Peek: %d\n", peek());
+      return 0;
+    }
+  </code></pre>
+  <H3>Explanation of the Code</H3>
+  <p>Global Variables:</p>
+  <p>stack[MAXSIZE]: An array that holds the elements of the stack, with a maximum size of 100 (defined by MAXSIZE).<br>
+    top: An integer variable used to track the top of the stack. It is initialized to -1, indicating that the stack is initially empty.</p>
+    
+    <p>Functions:</p>
+    <p>push(int data):<br>
+        This function adds a new element (data) to the top of the stack.<br>
+        Before inserting, it checks if the stack is full using the isFull() function. If the stack is not full, it increments the top and stores the data at the position stack[top]. If the stack is full, it prints an error message.<br>
+        <br>
+        pop():<br>
+        This function removes and returns the top element of the stack.<br>
+        It checks if the stack is empty using the isEmpty() function. If the stack is not empty, it retrieves the value at stack[top], decrements the top index, and returns the value. If the stack is empty, it prints an error message and returns -1.<br>
+        <br>
+        peek():<br>
+        This function returns the top element of the stack without removing it.<br>
+        It checks if the stack is empty using the isEmpty() function. If the stack is not empty, it returns the value at stack[top]. If the stack is empty, it prints an error message and returns -1.<br>
+        <br>
+        isFull():<br>
+        This function checks if the stack has reached its maximum capacity. If top is equal to MAXSIZE - 1, the stack is full and it returns true; otherwise, it returns false.<br>
+        <br>
+        isEmpty():<br>
+        This function checks if the stack is empty. If top is -1, the stack is empty and it returns true; otherwise, it returns false.</p>
+        <div class="button-container" style="text-align: center; margin-top: 30px;">
+          <button class="next-button" onclick="goToNextPage()">Test Your Self Here!</button>
+        </div>
+        
+        <script>
+          function goToNextPage() {
+            // Replace with the URL of the next page
+            window.location.href = "dsaquiz.html";
+          }
+        </script>
+        </body>
+        </html>

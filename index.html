@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Bolt</title>
+    <style>
+        /* Global Styles */
+        body {
+            background: #121212; /* AMOLED black */
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #ffffff;
+        }
+
+        h1, h2 {
+            text-align: center;
+            font-weight: bold;
+            color: #00adb5; /* Vibrant accent color */
+        }
+
+        a {
+            color: #00adb5;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #ffffff;
+        }
+/* Navigation Bar */
+.navbar {
+    background-color: #1f2933;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between; /* Distribute space between elements */
+    align-items: center;
+    position: relative; /* Allows positioning of profile icon */
+}
+
+.navbar img {
+    max-width: 100px; /* Adjust the size of the logo */
+    max-height: 100px;
+    object-fit: contain;
+    border-radius: 50%; /* Circular shape */
+}
+
+.navbar h1 {
+    margin: 0;
+    font-size: 3rem; /* Increased font size */
+    flex-grow: 1; /* Ensure the title is centered */
+    text-align: center;
+}
+
+        /* Profile Icon */
+        .profile-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #00adb5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .profile-icon img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* Dashboard */
+        .dashboard {
+            position: absolute;
+            top: 70px;
+            right: 20px;
+            background-color: #1f1f1f;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            width: 250px;
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .dashboard p {
+            margin: 10px 0;
+            font-size: 1rem;
+            color: #b0bec5;
+        }
+
+        .dashboard button {
+            width: 100%;
+            padding: 10px;
+            background-color: #00adb5;
+            color: #121212;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .dashboard button:hover {
+            background-color: #006064;
+            color: #ffffff;
+        }
+
+        /* Section Container */
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #1f1f1f;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-header {
+            margin-bottom: 30px;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+        }
+
+        /* Course Boxes */
+        .course-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px;
+            padding: 20px 0;
+        }
+
+        .course-box {
+            background-color: #252525; /* Dark gray for contrast */
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            padding: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .course-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.7);
+        }
+
+        .course-box h3 {
+            font-size: 1.6rem;
+            color: #00adb5;
+            margin-bottom: 10px;
+        }
+
+        .course-box p {
+            font-size: 1rem;
+            color: #b0bec5; /* Subtle gray for readability */
+            margin-bottom: 20px;
+        }
+
+        .course-box a {
+            padding: 12px 30px;
+            background-color: #00adb5;
+            color: #121212;
+            border-radius: 5px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease;
+        }
+
+        .course-box a:hover {
+            background-color: #006064;
+            color: #ffffff;
+        }
+
+        /* Centering Python Option */
+        .python-center {
+            grid-column: 2; /* Center in the middle column */
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #1f2933;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-top: 2px solid #00adb5;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .course-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .course-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .navbar img {
+                max-width: 120px;
+                max-height: 80px;
+            }
+
+            .course-box {
+                padding: 20px;
+            }
+
+            .course-box h3 {
+                font-size: 1.4rem;
+            }
+
+            .course-box p {
+                font-size: 0.9rem;
+            }
+
+            .course-box a {
+                padding: 10px 25px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .container, .navbar, .course-box {
+            animation: fadeIn 1s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <img src="WWW4.png" alt="Course Bolt Logo"> <!-- Logo at the top left -->
+        <h1>Course Bolt</h1> <!-- Course Bolt Text centered -->
+        <!-- Profile Icon -->
+        <div class="profile-icon" onclick="toggleDashboard()">
+            <img src="image.jpeg" alt="Profile">
+        </div>
+    </div>
+
+    <!-- Dashboard -->
+    <div class="dashboard" id="dashboard">
+        <p><strong>Name:</strong> John Doe</p>
+        <p><strong>Phone:</strong> +1234567890</p>
+        <button onclick="signOut()">Sign Out</button>
+    </div>
+
+    <!-- Subject Courses Section -->
+    <div class="container">
+        <div class="section-header">
+            <h2>Subject Courses</h2><!-- Subject Courses Text centered -->
+        </div>
+        <div class="course-grid">
+            <div class="course-box">
+                <h3>JAVA</h3>
+                <p>Learn Java from basics to advanced concepts and develop powerful applications.</p>
+                <a href="page1.html">Explore</a>
+            </div>
+            <div class="course-box">
+                <h3>C Programming</h3>
+                <p>Master C programming language and improve your understanding of core programming concepts.</p>
+                <a href="page2.html">Explore</a>
+            </div>
+            <div class="course-box">
+                <h3>Data Structures</h3>
+                <p>Dive deep into data structures and learn how to solve complex programming challenges efficiently.</p>
+                <a href="datastructure.html">Explore</a>
+            </div>
+            <div class="course-box python-center">
+                <h3>Python</h3>
+                <p>Explore the Python language and learn how to build web apps, automate tasks, and more.</p>
+                <a href="page3.html">Explore</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Web Development Courses Section -->
+    <div class="container">
+        <div class="section-header">
+            <h2>Web Development</h2>
+        </div>
+        <div class="course-grid">
+            <div class="course-box">
+                <h3>HTML</h3>
+                <p>Learn the building blocks of the web. Understand how to structure webpages using HTML.</p>
+                <a href="page4.html">Explore</a>
+            </div>
+            <div class="course-box">
+                <h3>CSS</h3>
+                <p>Get skilled in designing stunning web pages with CSS. Explore styles, animations, and more.</p>
+                <a href="page5.html">Explore</a>
+            </div>
+            <div class="course-box">
+                <h3>JavaScript</h3>
+                <p>Learn JavaScript to add interactivity to your websites and create dynamic user experiences.</p>
+                <a href="page6.html">Explore</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quizzes Section -->
+    <div class="container">
+        <div class="section-header">
+            <h2>Quizzes</h2>
+        </div>
+        <div class="course-grid">
+            <div class="course-box">
+                <h3>HTML Quiz</h3>
+                <p>Test your knowledge of HTML and sharpen your web development skills.</p>
+                <a href="htmlquiz.html">Start</a>
+            </div>
+            <div class="course-box">
+                <h3>DSA Quiz</h3>
+                <p>Challenge yourself with data structures and algorithms problems.</p>
+                <a href="dsaquiz.html">Start</a>
+            </div>
+            <div class="course-box">
+                <h3>C Programming Quiz</h3>
+                <p>Assess your coding skills with a variety of programming-related questions.</p>
+                <a href="Cquiz.html">Start</a>
+            </div>
+            <div class="course-box python-center">
+                <h3>Python Quiz</h3>
+                <p>Challenge yourself with Python programming exercises and enhance your coding skills.</p>
+                <a href="pythonquiz.html">Explore</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Toggle the visibility of the dashboard
+        function toggleDashboard() {
+            const dashboard = document.getElementById('dashboard');
+            dashboard.style.display = dashboard.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // Redirect to login page on sign-out
+        function signOut() {
+            window.location.href = 'login.html';
+        }
+
+        // Close the dashboard if clicked outside
+        window.onclick = function(event) {
+            const dashboard = document.getElementById('dashboard');
+            const profileIcon = document.querySelector('.profile-icon');
+            if (event.target !== dashboard && event.target !== profileIcon && !profileIcon.contains(event.target)) {
+                dashboard.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
